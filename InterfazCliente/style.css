@@ -1,0 +1,100 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #080113;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    position: relative;
+}
+
+.app-logo {
+    width: 100px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.app-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.app-name {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+main {
+    padding: 10px;
+    text-align: center;
+}
+
+.interactive-section {
+    margin-top: 20px;
+}
+
+.interactive-item {
+    margin: 20px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden; /* Añade un overflow para asegurar que el texto no se desborde del contenedor */
+  }
+  
+  .interactive-item img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 10px;
+    border: 2px solid #080113;
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .interactive-item img:hover {
+    transform: scale(1.1);
+  }
+  
+  .interactive-item p {
+    position: absolute;
+    width: 100%;
+    text-align: center; /* Alinea el texto al centro */
+    bottom: 0;
+    background-color: rgba(8, 1, 19, 0.7); /* Fondo semi-transparente para hacer el texto más legible */
+    color: #fff;
+    margin: 0; /* Elimina el margen superior del párrafo */
+    font-size: 18px;
+    padding: 10px; /* Añade un relleno alrededor del texto */
+    box-sizing: border-box; /* Incluye el relleno en el ancho y alto total del elemento */
+  }
+
+.bottom-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #080113;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+.bottom-bar-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.bottom-bar button {
+    background-color: #080113;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    margin: 0 10px;
+    border-radius: 20px;
+    cursor: pointer;
+}
