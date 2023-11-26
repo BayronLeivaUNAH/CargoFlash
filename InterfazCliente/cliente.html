@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página de Ejemplo</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      background-color: #703acc;
+      color: #fff;
+      padding: 20px;
+      text-align: left;
+      position: relative;
+    }
+
+    .user-info {
+      margin-bottom: 10px;
+    }
+
+    .logout-btn {
+      position: absolute;
+      top: 15px;
+      right: 10px;
+      cursor: pointer;
+      background-color: #471799;
+      color: #fff;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+    }
+
+    main {
+      padding: 10px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    table, th, td {
+      border: 1px solid #ddd;
+    }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #703acc;
+      color: #fff;
+    }
+
+    .bottom-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #703acc;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .bottom-bar-buttons {
+      display: flex;
+      justify-content: center; /* Centra los botones horizontalmente */
+    }
+
+    .bottom-bar button {
+      background-color: #471799;
+      color: #fff;
+      border: none;
+      padding: 8px;
+      margin: 0 5px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="user-info">Nombre del Usuario</div>
+  <button class="logout-btn">Cerrar Sesión</button>
+</header>
+
+<main>
+  <h1>Tabla de Datos</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Encabezado 1</th>
+        <th>Encabezado 2</th>
+        <th>Encabezado 3</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Dato 1</td>
+        <td>Dato 2</td>
+        <td>Dato 3</td>
+      </tr>
+      <!-- Agrega más filas según sea necesario -->
+    </tbody>
+  </table>
+</main>
+
+<div class="bottom-bar">
+  <div class="bottom-bar-buttons">
+    <button>Botón 1</button>
+    <button>Botón 2</button>
+    <button>Botón 3</button>
+  </div>
+</div>
+
+</body>
+</html>
