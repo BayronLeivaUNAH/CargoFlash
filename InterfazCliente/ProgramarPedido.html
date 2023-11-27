@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <!-- Importar la hoja de estilos de Bootstrap -->
+
+    <title>Interfaz clientes</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: #080113;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            position: relative;
+        }
+
+        .app-logo {
+            width: 100px;
+            height: auto;
+            margin-right: 10px;
+        }
+
+        .app-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .app-name {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .bottom-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #080113;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .bottom-bar-buttons {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .bottom-bar button {
+            background-color: #080113;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            margin: 0 10px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        main {
+            padding: 10px;
+            text-align: center;
+        }
+
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        form input,
+        form textarea,
+        form select {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        form button {
+            background-color: #471799;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        input[type="number"],
+        input[type="datetime-local"] {
+            width: calc(50% - 5px);
+            /* Hace que ambos campos tengan el mismo tamaño */
+            margin-right: 10px;
+        }
+
+        textarea {
+            height: 100px;
+            /* Ajusta la altura del campo de texto según tus preferencias */
+        }
+
+        button {
+            background-color: #471799;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="app-info">
+            <img src="../img/Logo.png" alt="Logo de Cargo Flash" class="app-logo">
+            <div class="app-name">Cargo Flash</div>
+        </div>
+    </header>
+
+    <main>
+        <form>
+            <h2>Crear Nuevo Pedido</h2>
+
+            <label for="ubicacionEntrega">Ubicación de Entrega:</label>
+            <button type="button" id="btnUbicacion" onclick="toggleMapa()">Seleccionar Ubicación</button>
+            <div id="mapa" style="height: 300px; display: none;"></div>
+            <input type="hidden" id="coordenadas" name="coordenadas">
+
+            <label for="descripcion">Descripción del Envío:</label>
+            <textarea id="descripcion" name="descripcion" rows="4" required></textarea>
+
+            <label for="monto">Monto a Pagar:</label>
+            <input type="number" id="monto" name="monto" value="0.00" step="0.01" required>
+
+            <label for="fechaHora">Fecha y Hora:</label>
+            <input type="datetime-local" id="fechaHora" name="fechaHora" required>
+
+            <br> <!-- Salto de línea -->
+
+            <button type="submit">Programar Pedido</button>
+        </form>
+    </main>
+
+    <div class="bottom-bar">
+        <div class="bottom-bar-buttons">
+            <button><i class="fas fa-home"></i> Inicio</button>
+            <button><i class="fas fa-shopping-cart"></i> Pedidos</button>
+            <button><i class="fas fa-bell"></i> Notificaciones</button>
+            <button><i class="fas fa-user"></i> Perfil</button>
+        </div>
+    </div>
+
+    <script src="../Login/script.js"></script>
+    <script src="/CargoFlash/InterfazCliente/mapa.js"></script>
+
+
+</body>
+
+</html>
