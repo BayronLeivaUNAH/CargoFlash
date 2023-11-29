@@ -29,8 +29,16 @@ function registrarUsuario() {
     // Agregar el nuevo usuario al arreglo
     const nuevoUsuario = { nombre, correo, contrasena, tipoUsuario };
     usuariosRegistrados.push(nuevoUsuario);
-    alert("Usuario registrado exitosamente. ¡Bienvenido, " + nombre + "!");
-    window.location.assign('../InterfazCliente/cliente.html');
+
+    if (tipoUsuario === "Cliente") {
+        alert("Usuario registrado exitosamente. ¡Bienvenido, " + nombre + "!");
+        window.location.assign('../InterfazCliente/cliente.html');
+    } else if (tipoUsuario === "Repartidor") {
+        alert("Usuario registrado exitosamente. ¡Bienvenido, " + nombre + "!");
+        window.location.assign('../interfazChofer/formularioChofer.html');
+    } else {
+        alert("Selecciona un tipo de usuario válido.");
+    }
 }
 
 // Función para iniciar sesión

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="/CargoFlash/InterfazCliente/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <style>
+        #formularioChofer {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #formulario h2 {
+            text-align: center;
+            color: #512da8;
+            margin-bottom: 20px;
+        }
+
+        #formulario label {
+            display: block;
+            margin-top: 15px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        #formulario input,
+        #formulario select {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-top: 8px;
+        }
+
+        #formulario button {
+            background-color: #512da8;
+            color: #fff;
+            padding: 10px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        #formulario button:hover {
+            background-color: #311b92;
+            /* Cambia el color de fondo al pasar el ratón sobre el botón */
+        }
+    </style>
+
+
+    <!-- Importar la hoja de estilos de Bootstrap -->
+
+    <title>Interfaz chofer</title>
+
+</head>
+
+<body>
+
+    <header>
+        <div class="app-info">
+            <img src="../img/Logo.png" alt="Logo de Cargo Flash" class="app-logo">
+            <div class="app-name">Cargo Flash</div>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Formulario del Chofer -->
+        <div id="formularioChofer">
+            <h2>Ingrese todos sus datos personales</h2>
+            <form id="formulario">
+                <label for="nombres">Nombres:</label>
+                <input type="text" id="nombres" name="nombres" required>
+
+                <label for="apellidos">Apellidos:</label>
+                <input type="text" id="apellidos" name="apellidos" required>
+
+                <label for="numeroIdentidad">Número de Identidad:</label>
+                <input type="text" id="numeroIdentidad" name="numeroIdentidad" required>
+
+                <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+                <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
+
+                <label for="sexo">Sexo:</label>
+                <select id="sexo" name="sexo" required>
+                    <option value="masculino">Masculino</option>
+                    <option value="femenino">Femenino</option>
+                    <option value="otro">Otro</option>
+                </select>
+
+                <label for="fotografia">Fotografía:</label>
+                <input type="file" id="fotografia" name="fotografia" accept="image/*" required>
+
+                <label for="telefono">Número de Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" required>
+
+                <label for="serieMotocicleta">Serie de Motocicleta:</label>
+                <input type="text" id="serieMotocicleta" name="serieMotocicleta" required>
+
+                <label for="placaMotocicleta">Placa de Motocicleta:</label>
+                <input type="text" id="placaMotocicleta" name="placaMotocicleta" required>
+
+                <button type="button" onclick="guardarInfo()">Guardar información</button>
+
+            </form>
+        </div>
+    </main>
+
+    <script src="../Login/script.js"></script>
+    <script src="/CargoFlash/InterfazCliente/pedidos.js"></script>
+    <script src="/CargoFlash/InterfazChofer/chofer.js"></script>
+
+</body>
+
+</html>

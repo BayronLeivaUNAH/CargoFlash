@@ -11,7 +11,7 @@
 
     <!-- Importar la hoja de estilos de Bootstrap -->
 
-    <title>Programar pedido</title>
+    <title>Método pago</title>
 
     <style>
         body {
@@ -134,6 +134,44 @@
             border-radius: 20px;
             cursor: pointer;
         }
+
+        .tabContainer {
+            display: flex;
+            background-color: #471799;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .tab {
+            cursor: pointer;
+            flex: 1;
+            padding: 10px;
+            background-color: inherit;
+            color: #fff;
+            border: none;
+            border-bottom: 2px solid transparent;
+            border-radius: 5px 5px 0 0;
+            margin-right: 5px;
+            transition: background-color 0.3s;
+            text-align: center; /* Centra el texto en la pestaña */
+        }
+
+        .tab:hover {
+            background-color: #361580;
+        }
+
+        .tabContent {
+            display: none;
+            padding: 10px;
+            border: 1px solid #471799;
+            border-radius: 0 0 5px 5px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .tabContent.active {
+            display: block;
+        }
     </style>
 </head>
 
@@ -147,40 +185,52 @@
     </header>
 
     <main>
-        <form>
-            <h2>Crear Nuevo Pedido</h2>
+        <div class="tabContainer">
+            <div class="tab" onclick="changeTab('online')">Pago Online</div>
+            <div class="tab" onclick="changeTab('efectivo')">Efectivo</div>
+        </div>
 
-            <label for="ubicacionEntrega">Ubicación de Entrega:</label>
-            <button type="button" id="btnUbicacion" onclick="toggleMapa()">Seleccionar Ubicación</button>
-            <div id="mapa" style="height: 300px; display: none;"></div>
-            <input type="hidden" id="coordenadas" name="coordenadas">
+        <form id="paymentForm">
+            <div class="tabContent" id="onlineContent">
+                <h2>Seleccionar el método de pago online</h2>
+                <!-- Agrega los campos específicos para el pago online aquí -->
+                <label for="onlineMethod">Seleccione el método de pago en línea:</label>
+                <select id="onlineMethod" name="onlineMethod">
+                    <option value="tarjeta">Tarjeta de crédito</option>
+                    <option value="paypal">PayPal</option>
+                    <!-- Agrega más opciones según sea necesario -->
+                </select>
+            </div>
 
-            <label for="descripcion">Descripción del Envío:</label>
-            <textarea id="descripcion" name="descripcion" rows="4" required></textarea>
+            <div class="tabContent" id="efectivoContent">
+                <h2>Pago en efectibo</h2>
+                <!-- Agrega los campos específicos para el pago en efectivo aquí -->
+                <p>¿Con cuánto vas a pagar?</p>
+                <input type="number" id="monto" name="monto" style="width: 100px;" pattern="\d*" title="Ingrese solo números"required>
+            </div>
 
-            <label for="monto">Monto a Pagar:</label>
-            <input type="number" id="monto" name="monto" value="0.00" step="0.01" required>
+            <!-- Agrega otros campos comunes para ambos métodos de pago aquí si es necesario -->
+            <!-- Por ejemplo, la dirección de entrega, etc. -->
 
-            <label for="fechaHora">Fecha y Hora:</label>
-            <input type="datetime-local" id="fechaHora" name="fechaHora" required>
-
+            <!-- Agrega un botón de envío común para ambos métodos de pago -->
             <br> <!-- Salto de línea -->
-
-            <button type="submit">Programar Pedido</button>
+            <button type="button" onclick="confirmarPago()">Realizar Pedido</button>
         </form>
     </main>
+
 
     <div class="bottom-bar">
         <div class="bottom-bar-buttons">
             <button><i class="fas fa-home"></i> Inicio</button>
             <button><i class="fas fa-shopping-cart"></i> Pedidos</button>
-            <button><i class="fas fa-bell"></i> Notificaciones</button>
             <button><i class="fas fa-user"></i> Perfil</button>
+            <button><i class="fas fa-gem"></i> Premium</button>
         </div>
     </div>
 
     <script src="../Login/script.js"></script>
     <script src="/CargoFlash/InterfazCliente/mapa.js"></script>
+    <script src="/CargoFlash/InterfazCliente/pedidos.js"></script>
 
 
 </body>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="/CargoFlash/InterfazCliente/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <style>
+        #informacionUsuario {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+
+        #chat {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            height: 300px;
+            overflow-y: auto;
+        }
+
+        #mensajes {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .mensaje {
+            background-color: #e1ffc7;
+            margin-bottom: 8px;
+            padding: 8px;
+            border-radius: 8px;
+        }
+
+        #entradaMensaje {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 8px;
+        }
+
+        #mensaje {
+            width: 70%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-right: 8px;
+        }
+
+        #cancelarEntrega {
+            background-color: #ff5959;
+            color: #fff;
+            border: none;
+            padding: 8px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+
+    <!-- Importar la hoja de estilos de Bootstrap -->
+
+    <title>Entrega</title>
+
+</head>
+
+<body>
+
+    <header>
+        <div class="app-info">
+            <img src="../img/Logo.png" alt="Logo de Cargo Flash" class="app-logo">
+            <div class="app-name">Cargo Flash</div>
+        </div>
+    </header>
+
+    <main>
+        <div id="informacionUsuario">
+            <h3>Información del Repartidor</h3>
+            <!-- Mostrar información del usuario como texto -->
+            <p><strong>Nombre:</strong> Bayron Leiva</p>
+            <p><strong>Número de Teléfono:</strong> 8877-6655</p>
+        </div>
+
+        <div id="chat">
+            <h3>Chat</h3>
+            <!-- Área de chat con formato de mensajes -->
+            <div id="mensajes">
+                <div class="mensaje">
+                    <p><strong>Chofer:</strong> ¡Hola! estoy en camino.</p>
+                </div>
+                <div class="mensaje">
+                    <p><strong>Cliente:</strong> Gracias, ¿puede tocar el timbre?</p>
+                </div>
+                <!-- Agrega más mensajes según sea necesario -->
+            </div>
+
+            <!-- Entrada de texto para enviar mensajes -->
+            <div id="entradaMensaje">
+                <input type="text" id="mensaje" placeholder="Escribe un mensaje">
+                <button onclick="enviarMensaje()">Enviar</button>
+            </div>
+        </div>
+
+        <!-- Botón para cancelar la entrega -->
+        <button id="cancelarEntrega" onclick="cancelarEntrega()">Cancelar Entrega</button>
+    </main>
+
+    <div class="bottom-bar">
+        <div class="bottom-bar-buttons">
+            <button><i class="fas fa-home"></i> Inicio</button>
+            <a href="/CargoFlash/InterfazCliente/pedidos.html">
+                <button><i class="fas fa-shopping-cart"></i> Pedidos</button>
+            </a>
+            <button><i class="fas fa-user"></i> Perfil</button>
+            <button><i class="fas fa-gem"></i> Premium</button>
+        </div>
+    </div>
+
+    <script src="../Login/script.js"></script>
+    <script src="/CargoFlash/InterfazCliente/pedidos.js"></script>
+    <script src="/CargoFlash/InterfazChofer/chofer.js"></script>
+
+</body>
+
+</html>

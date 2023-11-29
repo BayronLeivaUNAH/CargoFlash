@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Estilos para la Sección de Premium */
+        #premium-section {
+            background-color: #f4f4f4;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #premium-section h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .premium-advantage {
+            margin-top: 20px;
+        }
+
+        .premium-advantage h3 {
+            color: #512da8;
+            /* Color del encabezado */
+        }
+
+        #premium-button {
+            background-color: #512da8;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        #premium-button:hover {
+            background-color: #0056b3;
+            /* Cambia el color al pasar el mouse sobre el botón */
+        }
+    </style>
+
+
+    <!-- Importar la hoja de estilos de Bootstrap -->
+
+    <title>Premium</title>
+
+</head>
+
+<body>
+
+    <header>
+        <div class="app-info">
+            <img src="../img/Logo.png" alt="Logo de Cargo Flash" class="app-logo">
+            <div class="app-name">Cargo Flash</div>
+        </div>
+    </header>
+
+    <main>
+        <section id="premium-section">
+            <h2>¡Descubre las ventajas de ser Premium!</h2>
+
+            <div class="premium-advantage">
+                <h3>Cancelación de Entregas</h3>
+                <p>Como usuario Premium, tendrás la opción de cancelar entregas que aún no han sido aceptadas.</p>
+            </div>
+
+            <div class="premium-advantage">
+                <h3>Repartidor Específico</h3>
+                <p>Selecciona tu repartidor favorito y disfruta de un servicio personalizado.</p>
+            </div>
+
+            <div class="premium-advantage">
+                <h3>Cupones de Descuento</h3>
+                <p>Obtén acceso exclusivo en cupones de descuento para tus envíos.</p>
+            </div>
+
+            <!-- Botón para hacerse Premium -->
+            <button id="premium-button" onclick="hacersePremium()">¡Hazte Premium!</button>
+        </section>
+    </main>
+
+    <div class="bottom-bar">
+        <div class="bottom-bar-buttons">
+            <button><i class="fas fa-home"></i> Inicio</button>
+            <a href="/CargoFlash/InterfazCliente/pedidos.html">
+                <button><i class="fas fa-shopping-cart"></i> Pedidos</button>
+            </a>
+            <button><i class="fas fa-user"></i> Perfil</button>
+            <button><i class="fas fa-gem"></i> Premium</button>
+        </div>
+    </div>
+
+    <script src="../Login/script.js"></script>
+    <script src="/CargoFlash/InterfazCliente/pedidos.js"></script>
+
+</body>
+
+</html>

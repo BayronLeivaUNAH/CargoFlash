@@ -98,3 +98,129 @@ main {
     border-radius: 20px;
     cursor: pointer;
 }
+
+.lista-pedidos {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.pedido {
+    border: 1px solid #ccc;
+    margin: 10px;
+    padding: 15px;
+    border-radius: 8px;
+    width: 500px; /* Ajusta el ancho según tus necesidades */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#nuevoPedido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+button {
+    background-color: #512da8;
+    color: #fff;
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#nuevoPedido img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 10px;
+    border: 2px solid #080113;
+    margin: 0 auto;
+    transition: transform 0.2s ease-in-out;
+}
+
+#nuevoPedido .labelContainer {
+    margin-top: 5px;
+    position: absolute; /* Cambiado de relative a absolute */
+    top: 35%; /* Coloca el 50% del contenedor padre */
+    left: 50%; /* Coloca el 50% del contenedor padre */
+    transform: translate(-50%, -50%); /* Centra el contenedor */
+}
+
+#nuevoPedido label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#nuevoPedido p {
+    margin-top: 10px;
+}
+
+/* Estilos para la notificación */
+.notificacion {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    padding: 40px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    z-index: 1000;
+    text-align: center;
+}
+
+/* Estilos para el botón de aceptar */
+.notificacion button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 5px;
+    background-color: #512da8;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.notificacion button:last-child {
+    margin-right: 0; /* Elimina el margen derecho del último botón */
+    margin-left: 10px; /* Añade margen izquierdo al segundo botón */
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-contenido {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    border-radius: 8px;
+}
+
+.cerrar-modal {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.cerrar-modal:hover {
+    color: black;
+}

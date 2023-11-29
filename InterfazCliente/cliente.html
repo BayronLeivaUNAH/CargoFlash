@@ -11,7 +11,7 @@
 
   <!-- Importar la hoja de estilos de Bootstrap -->
 
-  <title>Interfaz clientes</title>
+  <title>Interfaz cliente</title>
 
 </head>
 
@@ -36,14 +36,29 @@
         <p>Programar Pedido</p>
       </div>
     </div>
+
+    <div class="interactive-item" id="nuevoPedido" style="display: none;">
+      <img src="../img/Entrega.jpg" alt="Programar Pedido">
+      <div class="labelContainer">
+        <label id="labelVariable1"></label>
+        <label id="labelVariable2"></label>
+      </div>
+
+      <p>Pedido Pendiente</p>
+    </div>
   </main>
 
   <div class="bottom-bar">
     <div class="bottom-bar-buttons">
       <button><i class="fas fa-home"></i> Inicio</button>
-      <button><i class="fas fa-shopping-cart"></i> Pedidos</button>
-      <button><i class="fas fa-bell"></i> Notificaciones</button>
+      <a href="/CargoFlash/InterfazCliente/pedidos.html">
+        <button><i class="fas fa-shopping-cart"></i> Pedidos</button>
+      </a>
       <button><i class="fas fa-user"></i> Perfil</button>
+      <a href="/CargoFlash/InterfazCliente/premium.html">
+        <button><i class="fas fa-gem"></i> Premium</button>
+      </a>
+      
     </div>
   </div>
 

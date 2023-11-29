@@ -11,7 +11,7 @@
 
   <!-- Importar la hoja de estilos de Bootstrap -->
 
-  <title>Interfaz clientes</title>
+  <title>Nuevo Pedido</title>
 
   <style>
     body {
@@ -125,10 +125,9 @@
       <label for="monto">Monto a Pagar:</label>
       <input type="number" id="monto" name="monto" style="width: 100px;" pattern="\d*" title="Ingrese solo números"
         required>
-
       <br> <!-- Salto de línea -->
 
-      <button type="submit">Crear Pedido</button>
+      <button type="button" onclick="Pagar()">Ir a pagar</button>
     </form>
   </main>
 
@@ -136,12 +135,13 @@
     <div class="bottom-bar-buttons">
       <button><i class="fas fa-home"></i> Inicio</button>
       <button><i class="fas fa-shopping-cart"></i> Pedidos</button>
-      <button><i class="fas fa-bell"></i> Notificaciones</button>
       <button><i class="fas fa-user"></i> Perfil</button>
+      <button><i class="fas fa-gem"></i> Premium</button>
     </div>
   </div>
 
   <script src="../Login/script.js"></script>
+  <script src="/CargoFlash/InterfazCliente/pedidos.js"></script>
   <script src="/CargoFlash/InterfazCliente/mapa.js"></script>
 
 
